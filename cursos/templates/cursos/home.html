@@ -1,0 +1,10 @@
+{% extends 'cursos/base.html' %}
+
+{% block title %}Inicio - Bootcamp{% endblock %}
+
+{% block content %}
+<h1>Bienvenido al Bootcamp</h1>
+<p>Transforma tu carrera con nuestros <strong>{{ total_cursos }} cursos</strong> de tecnologia.</p>
+
+<a href="{% url 'cursos:lista_cursos' %}" class="btn btn-primary">Ver cursos disponibles</a>
+{% endblock %}

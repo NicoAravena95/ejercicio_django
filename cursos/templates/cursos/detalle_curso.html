@@ -1,0 +1,29 @@
+{% extends 'cursos/base.html' %}
+
+{% block title %}{{ curso.nombre }} - Bootcamp{% endblock %}
+
+{% block content %}
+{% if curso %}
+    <h1>{{ curso.nombre }}</h1>
+    <p>{{ curso.descripcion }}</p>
+
+    <ul>
+        <li><strong>Duracion:</strong> {{ curso.duracion }}</li>
+        <li><strong>Nivel:</strong> {{ curso.nivel }}</li>
+        <li><strong>Precio:</strong> {{ curso.precio }}</li>
+    </ul>
+
+    <h3>Temario</h3>
+    <ol>
+        {% for tema in curso.temario %}
+        <li>{{ tema }}</li>
+        {% endfor %}
+    </ol>
+
+    <a href="{% url 'cursos:lista_cursos' %}" class="btn btn-secondary">Volver al listado</a>
+{% else %}
+    <h1>Curso no encontrado</h1>
+    <p>El curso que buscas no existe.</p>
+    <a href="{% url 'cursos:lista_cursos' %}" class="btn btn-primary">Ver todos los cursos</a>
+{% endif %}
+{% endblock %}

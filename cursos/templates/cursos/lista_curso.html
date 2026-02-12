@@ -1,0 +1,23 @@
+{% extends 'cursos/base.html' %}
+
+{% block title %}Cursos - Bootcamp{% endblock %}
+
+{% block content %}
+<h1>Cursos disponibles</h1>
+
+<div class="row mt-3">
+    {% for curso in cursos %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ curso.nombre }}</h5>
+                <p class="card-text">{{ curso.descripcion }}</p>
+                <p><strong>Duracion:</strong> {{ curso.duracion }}</p>
+                <p><strong>Precio:</strong> {{ curso.precio }}</p>
+                <a href="{% url 'cursos:detalle_curso' curso.id %}" class="btn btn-primary">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
