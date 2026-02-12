@@ -34,6 +34,7 @@ Desarrollar una mini aplicación Django que resuelva el problema planteado, demo
 
 # Estructura
 
+```
 bootcamp_project/
 │
 ├── bootcamp_project/
@@ -51,5 +52,6 @@ bootcamp_project/
 │           └── about.html
 │
 └── manage.py
+```
 
 
